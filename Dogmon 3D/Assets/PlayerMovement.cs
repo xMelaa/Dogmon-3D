@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour{
     
     public CharacterController controller; 
     public Transform cam; // zmiana kamery
+    public GameObject deathMenu;
 
     public float speed = 5f; //zmienna szybkości
     public float turnSmoothTime = 0.1f; //zmienna gładkości zmiany kierunku
     float turnSmoothVelocity;
+
+    public float energia = 1; //energia
 
     void Update(){
         float horizontal = Input.GetAxisRaw("Horizontal"); //zmienne odpowioedzialne za poruszanie sie wsad i strzalkami
@@ -24,6 +28,19 @@ public class PlayerMovement : MonoBehaviour{
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized *speed*Time.deltaTime); //poruszaj się
-        }                                                    
+        } 
+
+        if(energia < 1){
+            deathMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }                                                   
+    }
+
+    public void energy(int wartosc){
+        energia = energia + wartosc; //dodawanie wartosci do energii        
+    }
+
+    public void BackToMenu(){ //potrzebne do okna pauzy, skok do menu
+        SceneManager.LoadScene(0);
     }
 }
