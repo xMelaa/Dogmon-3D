@@ -33,7 +33,8 @@ public class Patrol : MonoBehaviour{
        if(spotIndex ==spots.Length){ //jesli dojdzie dddo ostatniego indexu 
            spotIndex=0; //wroc do indexu 0
        }
-       transform.LookAt(spots[spotIndex].position);   }
+       transform.LookAt(spots[spotIndex].position);   
+    }
   
 
     void OnTriggerEnter(Collider col){ // jesli trigger jest aktywowany
