@@ -33,9 +33,9 @@ public class Coins : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider col){ //jesli wejdzie na pole    
-        //if(col.name== "Player"){ //jesli colider to player i teleport jest true           
-        //   Destroy(gameObject);             
-        //}
+        if(col.tag== "Coins"){ //jesli colider to player i teleport jest true           
+           Destroy(col.gameObject);           
+        }
 
 
         switch (lvlNumber)
