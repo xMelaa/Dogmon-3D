@@ -12,7 +12,7 @@ public class Fence : MonoBehaviour{
 
     void OnTriggerEnter(Collider col){ //jesli wejdzie na pole    
         if(col.name== "Player"){ //jesli colider to player i teleport jest true           
-           //Destroy(gameObject);             
+           Destroy(gameObject);             
         }
     }    
 }
