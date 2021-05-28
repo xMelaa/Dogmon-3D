@@ -77,8 +77,7 @@ public class Coins : MonoBehaviour
                 coin++;
                 //zmien wczesniej wybrany TextMeshPro na Tekst + ilość punktów zamienionych na string
                 if(coin==coinLVL){ //jeśli osiągniemy ilość punktów do przejścia na kolejny poziom to odblokuj teleport /teleportuj bohatera/
-                    teleport = true;
-                    //gameObject.transform.position= new Vector3(28,2,0);
+                    teleport = true;                    
                 }
                 textCoins.text = coin.ToString() + " / " + coinLVL;
                 
