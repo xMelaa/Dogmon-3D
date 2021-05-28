@@ -7,7 +7,6 @@ using TMPro;
 public class Coins : MonoBehaviour
 {
     public PlayerMovement player;  
-    public GameObject kosc; 
     float speed = 70.0f; //prędkość obrotu kostki 
     public bool teleport = false;    
         //Aktualna ilość punktów
@@ -26,17 +25,52 @@ public class Coins : MonoBehaviour
     void Start(){
         player = FindObjectOfType<PlayerMovement> (); //automatycznie przypisz obiekt        
         lvlNumber = SceneManager.GetActiveScene().buildIndex;
+
+        switch (lvlNumber)
+                {
+                    case 1:
+                        coinLVL = 10;
+                        break;
+                    case 2:
+                        coinLVL = 12;
+                        break;
+                    case 3:
+                        coinLVL = 56;
+                        break;
+                    case 4:
+                        coinLVL = 26;
+                        break;
+                    case 5:
+                        coinLVL = 42;
+                        break;
+                    case 6:
+                        coinLVL = 62;
+                        break;
+                    case 7:
+                        coinLVL = 24;
+                        break;
+                    case 8:
+                        coinLVL = 44;
+                        break;
+                    case 9:
+                        coinLVL = 64;
+                        break;
+                    default:
+                        break;
+                }
+
+                textCoins.text = coin.ToString() + " / " + coinLVL;
+
     }
 
     void Update(){
-        kosc.transform.Rotate(Vector3.up * speed * Time.deltaTime);        
+           
     }
 
     void OnTriggerEnter(Collider col){ //jesli wejdzie na pole    
         if(col.tag== "Coins"){ //jesli colider to player i teleport jest true           
            Destroy(col.gameObject);           
         }
-
 
         switch (lvlNumber)
                 {
