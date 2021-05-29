@@ -118,9 +118,10 @@ public class Coins : MonoBehaviour
                     //tworzymy Vector3 z miejscem kolizji
                 Vector3 colPosition = col.transform.position;
                     //Odtwórz dźwięk coinSound w miejscu kolizji
+                
                 AudioSource.PlayClipAtPoint(coinSound, colPosition, volume);
                     //Zniszcz obiekt
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
     }   
 
