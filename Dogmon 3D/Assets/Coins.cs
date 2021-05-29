@@ -41,10 +41,10 @@ public class Coins : MonoBehaviour
                         coinLVL = 26;
                         break;
                     case 5:
-                        coinLVL = 42;
+                        coinLVL = 40;
                         break;
                     case 6:
-                        coinLVL = 62;
+                        coinLVL = 45;
                         break;
                     case 7:
                         coinLVL = 24;
@@ -53,7 +53,7 @@ public class Coins : MonoBehaviour
                         coinLVL = 44;
                         break;
                     case 9:
-                        coinLVL = 64;
+                        coinLVL = 62;
                         break;
                     default:
                         break;
