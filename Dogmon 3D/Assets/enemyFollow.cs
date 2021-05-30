@@ -7,18 +7,22 @@ public class enemyFollow : MonoBehaviour
     public Transform target;
     public float speed = 4f;
     private Rigidbody rig;
-
-    // Start is called before the first frame update
-    private void Start()
-    {
+    public PlayerMovement player;
+    
+    private void Start(){
         rig = GetComponent<Rigidbody>();
+        player = FindObjectOfType<PlayerMovement> ();
     }
-
-    // Update is called once per frame
-    private void Update()
-    {
+    
+    private void Update(){
         var pos = Vector3.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
         rig.MovePosition(pos);
         transform.LookAt(target);
+    }
+
+    private void OnCollisionEnter(Collision collision){        
+        if (collision.gameObject.name.Contains("Player")){
+            player.energy (-1);
+        }
     }
 }
