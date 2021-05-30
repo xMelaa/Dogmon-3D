@@ -30,17 +30,13 @@ public class PlayerMovement : MonoBehaviour{
             controller.Move(moveDir.normalized *speed*Time.deltaTime); //poruszaj się
         } 
 
-        if(energia < 1){
+        /*if(energia < 1){
             deathMenu.SetActive(true);
             Time.timeScale = 0f;
-        }                                                   
+        }  */                                                 
     }
 
     public void energy(int wartosc){
         energia = energia + wartosc; //dodawanie wartosci do energii        
-    }
-
-    public void BackToMenu(){ //potrzebne do okna pauzy, skok do menu
-        SceneManager.LoadScene(0);
-    }
+    } 
 }

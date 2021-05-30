@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoneRotation : MonoBehaviour
-{
+public class BoneRotation : MonoBehaviour{
     public GameObject kosc; 
     float speed = 70.0f; 
     

@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyFollow : MonoBehaviour
-{
+public class enemyFollow : MonoBehaviour{
     public Transform target;
     public float speed = 4f;
     private Rigidbody rig;

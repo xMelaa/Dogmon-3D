@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class Coins : MonoBehaviour
-{
+public class Coins : MonoBehaviour{
     public PlayerMovement player;      
     public bool teleport = false;    
         //Aktualna ilość punktów

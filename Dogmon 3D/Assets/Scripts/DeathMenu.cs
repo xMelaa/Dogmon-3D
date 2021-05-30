@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DeathMenu : MonoBehaviour
-{
+public class DeathMenu : MonoBehaviour{
     public static bool GameIsPaused = false;
     public GameObject deathMenuUI;
-    public float energia = 1;
+    public PlayerMovement player;    
+    
+    void Start(){
+        player = FindObjectOfType<PlayerMovement> ();
+    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (energia < 1)
-        {
-            //DeathMenu.SetActive(true);
-            Time.timeScale = 1f;
+    void Update(){
+        if (player.energia < 1){
+            deathMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+            //GameIsPaused = true;
         }
     }
 
@@ -23,8 +24,8 @@ public class DeathMenu : MonoBehaviour
         SceneManager.LoadScene(0); //scena 0 = menu
     }
 
-    public void ResetLevel(){
-        SceneManager.LoadScene(1); //scena 0 = menu
+    public void ResetLevel(){               
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //zaladuj aktualny lvl  
+        Time.timeScale = 1f;
     }
-
 }
