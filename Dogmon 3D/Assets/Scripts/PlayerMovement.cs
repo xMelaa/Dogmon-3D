@@ -28,12 +28,7 @@ public class PlayerMovement : MonoBehaviour{
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized *speed*Time.deltaTime); //poruszaj się
-        } 
-
-        /*if(energia < 1){
-            deathMenu.SetActive(true);
-            Time.timeScale = 0f;
-        }  */                                                 
+        }                                                     
     }
 
     public void energy(int wartosc){

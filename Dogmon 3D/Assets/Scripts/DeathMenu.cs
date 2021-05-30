@@ -21,10 +21,13 @@ public class DeathMenu : MonoBehaviour{
     }
 
     public void LoadMenu(){
+        player.energia = 1;
         SceneManager.LoadScene(0); //scena 0 = menu
+        Time.timeScale = 1f;        
     }
 
-    public void ResetLevel(){               
+    public void ResetLevel(){   
+        player.energia = 1;           
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //zaladuj aktualny lvl  
         Time.timeScale = 1f;
     }

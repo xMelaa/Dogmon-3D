@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour{
 	//przeskok między scenami dzięki inkrementacji indexu
     public void PlayGame(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 
     public void QuitGame(){
